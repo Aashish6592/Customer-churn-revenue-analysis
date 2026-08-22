@@ -53,9 +53,18 @@ Business Recommendations
 
 ## Repository Structure
 
-```text
 data/         → Raw and cleaned datasets
 sql/          → SQL queries and analysis
 python/       → Data cleaning and exploratory analysis
 powerbi/      → Power BI dashboard
 screenshots/  → Dashboard screenshots
+
+## Data Cleaning & Validation
+
+All 5 datasets were validated for the following:
+- Missing/duplicate customer IDs
+- Invalid ages, tenure, charges
+- Logical consistency (churned status vs churn_date)
+- Invalid categorical values (payment methods, statuses)
+
+**Result:** All 12 validation checks passed with 0 anomalies found, confirming data integrity across all tables.
