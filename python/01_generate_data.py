@@ -3,8 +3,8 @@ import numpy as np
 from datetime import datetime, timedelta
 import random
 
-np.random.seed(42)
-random.seed(42)
+np.random.seed(101)
+random.seed(101)
 
 NUM_CUSTOMERS = 15000
 

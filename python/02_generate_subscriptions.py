@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 
-np.random.seed(42)
+np.random.seed(202)
 
 customers_df = pd.read_csv("data/customers.csv")
 

@@ -3,8 +3,8 @@ import numpy as np
 from datetime import datetime, timedelta
 import random
 
-np.random.seed(42)
-random.seed(42)
+np.random.seed(505)
+random.seed(505)
 
 customers_df = pd.read_csv("data/customers.csv")
 subscriptions_df = pd.read_csv("data/subscriptions.csv")
