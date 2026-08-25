@@ -109,3 +109,43 @@ plt.savefig("screenshots/usage_vs_churn.png")
 plt.close()
 
 print("\nChurn visualization charts saved!")
+
+# 10. Correlation Heatmap
+plt.figure(figsize=(9,7))
+numeric_cols = df[["age", "tenure_months", "monthly_charges", "monthly_usage_hours", 
+                     "login_frequency", "support_tickets", "complaints", "churned"]]
+correlation_matrix = numeric_cols.corr()
+sns.heatmap(correlation_matrix, annot=True, cmap="coolwarm", fmt=".2f", linewidths=0.5)
+plt.title("Correlation Heatmap")
+plt.tight_layout()
+plt.savefig("screenshots/correlation_heatmap.png")
+plt.close()
+
+# 11. Tenure Distribution
+plt.figure(figsize=(8,5))
+sns.histplot(customers_df["tenure_months"], bins=25, kde=True, color="teal")
+plt.title("Customer Tenure Distribution")
+plt.xlabel("Tenure (Months)")
+plt.ylabel("Count")
+plt.savefig("screenshots/tenure_distribution.png")
+plt.close()
+
+# 12. Monthly Charges Distribution
+plt.figure(figsize=(8,5))
+sns.histplot(subscriptions_df["monthly_charges"], bins=30, kde=True, color="indianred")
+plt.title("Monthly Charges Distribution")
+plt.xlabel("Monthly Charges")
+plt.ylabel("Count")
+plt.savefig("screenshots/charges_distribution.png")
+plt.close()
+
+# 13. Support Tickets Distribution
+plt.figure(figsize=(8,5))
+sns.histplot(usage_df["support_tickets"], bins=15, kde=False, color="goldenrod")
+plt.title("Support Tickets Distribution")
+plt.xlabel("Support Tickets")
+plt.ylabel("Count")
+plt.savefig("screenshots/tickets_distribution.png")
+plt.close()
+
+print("\nAll EDA charts complete! Total charts saved in screenshots/ folder.")
